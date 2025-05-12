@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NatgXuCqn4I=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Vitalitas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sande\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.4\\microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "C:\\Users\\sande\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

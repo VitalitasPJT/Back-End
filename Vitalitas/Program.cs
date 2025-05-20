@@ -1,14 +1,17 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 
-var connectionString = "Server=SLIPPER\\SLQEXPRESS,1433;Database=TESTE_CRIACAO;User Id=usuarioapi;Password=Senha123456;TrustServerCertificate=True;";
+var builder = WebApplication.CreateBuilder(args);
 
-try
-{
-    using var connection = new SqlConnection(connectionString);
-    connection.Open();
-    Console.WriteLine("✅ Conexão bem-sucedida!");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"❌ Erro ao conectar: {ex.Message}");
-}
+// Conecta ao banco
+builder.Services.AddDbContext<Contexto>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();

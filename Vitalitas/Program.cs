@@ -8,9 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<Contexto>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReact",
+        builder => builder
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
+app.UseCors("AllowReact");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

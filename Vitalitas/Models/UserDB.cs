@@ -7,28 +7,32 @@ namespace Vitalitas.Models
     public class USUARIO
     {
         [Key]
-        [Column("ID", TypeName = "nchar(15)")]
+        [Column("ID")]
         public required string Id { get; set; }
 
         [Required]
-        [StringLength(30)]
-        public required string Name { get; set; }
+        public required string Nome { get; set; }
 
         [Required]
-        [StringLength(15)]
         public required string Usuario { get; set; }
 
         [Required]
-        [StringLength(50)]
         public required string Email { get; set; }
 
         [Required]
-        [StringLength(20)]
-        public  required string Password { get; set; }
+        public required string Senha { get; set; }
 
         [Required]
-        [StringLength(1)]
+        public required string Telefone { get; set; }
+
+        [Required]
         public required string Tipo { get; set; }
         
+    }
+
+    public class Login
+    {
+        public string Usuario { get; set; }
+        public string Password { get; set; }
     }
 }

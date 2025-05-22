@@ -30,6 +30,21 @@ public class UserController : ControllerBase
         return user;
     }
 
+    [HttpPost("login")]
+    public ActionResult<bool> Login([FromBody] Login login)
+    {
+        var usuarip = _context.Usuarios.FirstOrDefault(u  => u.Usuario == login.Usuario && u.Senha == login.Password);
+
+        if (usuarip != null)
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
+    }
+
     [HttpPost]
     public ActionResult<USUARIO> Post(USUARIO user)
     {

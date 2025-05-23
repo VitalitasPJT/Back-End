@@ -11,16 +11,16 @@
       "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\contexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:contexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\models\\userdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:models\\userdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\contexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:contexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -40,35 +40,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T15:59:46.629Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserDB.cs",
-              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
-              "RelativeDocumentMoniker": "Models\\UserDB.cs",
-              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
-              "RelativeToolTip": "Models\\UserDB.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwBkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:32:26.484Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Contexto.cs",
-              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Contexto.cs",
-              "RelativeDocumentMoniker": "Contexto.cs",
-              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Contexto.cs",
-              "RelativeToolTip": "Contexto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:57:53.162Z",
               "EditorCaption": ""
             },
             {
@@ -79,14 +53,14 @@
               "RelativeDocumentMoniker": "Controllers\\UserDBController.cs",
               "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\UserDBController.cs",
               "RelativeToolTip": "Controllers\\UserDBController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAwEEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T17:47:08.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -94,7 +68,38 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-17T16:30:12.907Z",
+              "WhenOpened": "2025-05-17T16:30:12.907Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDB.cs",
+              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
+              "RelativeDocumentMoniker": "Models\\UserDB.cs",
+              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
+              "RelativeToolTip": "Models\\UserDB.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAqwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:32:26.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Contexto.cs",
+              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Contexto.cs",
+              "RelativeDocumentMoniker": "Contexto.cs",
+              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Contexto.cs",
+              "RelativeToolTip": "Contexto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:57:53.162Z",
               "EditorCaption": ""
             }
           ]

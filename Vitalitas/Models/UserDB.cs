@@ -35,4 +35,52 @@ namespace Vitalitas.Models
         public string Usuario { get; set; }
         public string Password { get; set; }
     }
+
+    [Table("ALUNO")]
+    public class ALUNO
+    {
+        [Required]
+        public string Id_Usuario { get; set; }
+
+        [Required]
+        public string Status { get; set; }
+
+        [Required]
+        public DateTime Data_Inscricao { get; set; }
+
+        public string Objetivo { get; set; }
+
+        [Key]
+        [Required]
+        public string Cpf { get; set; }
+
+        [Required]
+        public DateTime Data_Nascimento { get; set; }
+    }
+
+    [Table("PROFESSOR")]
+    public class PROFESSOR
+    {
+        [Required]
+        public string Id_Usuario { get; set; }
+
+        [Key]
+        [Required]
+        public long Cref { get; set; }
+  
+    }
+
+    [Table("ADMINISTRADOR")]
+    public class ADMINISTRADOR
+    {
+        [Required]
+        public string Id_Usuario { get; set; }
+
+        [Required]
+        public string Nivel { get; set; }
+        
+        [Key]
+        [Required]
+        public long Registro { get; set; }
+    }
 }

@@ -16,7 +16,12 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader());
 });
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
+
 
 var app = builder.Build();
 app.UseCors("AllowReact");

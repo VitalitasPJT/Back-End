@@ -2,7 +2,7 @@
   {
     "ContainingType": "UserController",
     "Method": "Get",
-    "RelativePath": "vitalitas/User",
+    "RelativePath": "vitalitas/user",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -22,7 +22,7 @@
   {
     "ContainingType": "UserController",
     "Method": "Post",
-    "RelativePath": "vitalitas/User",
+    "RelativePath": "vitalitas/user",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -48,7 +48,7 @@
   {
     "ContainingType": "UserController",
     "Method": "Get",
-    "RelativePath": "vitalitas/User/{id}",
+    "RelativePath": "vitalitas/user/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -74,7 +74,7 @@
   {
     "ContainingType": "UserController",
     "Method": "Put",
-    "RelativePath": "vitalitas/User/{id}",
+    "RelativePath": "vitalitas/user/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -95,7 +95,7 @@
   {
     "ContainingType": "UserController",
     "Method": "Delete",
-    "RelativePath": "vitalitas/User/{id}",
+    "RelativePath": "vitalitas/user/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -110,8 +110,60 @@
   },
   {
     "ContainingType": "UserController",
+    "Method": "PostAdministrador",
+    "RelativePath": "vitalitas/user/administrador",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "administrador",
+        "Type": "Vitalitas.Models.ADMINISTRADOR",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.ADMINISTRADOR",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "PostAluno",
+    "RelativePath": "vitalitas/user/aluno",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aluno",
+        "Type": "Vitalitas.Models.ALUNO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.ALUNO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
     "Method": "Login",
-    "RelativePath": "vitalitas/User/login",
+    "RelativePath": "vitalitas/user/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -125,6 +177,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "PostProfessor",
+    "RelativePath": "vitalitas/user/professor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "professor",
+        "Type": "Vitalitas.Models.PROFESSOR",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.PROFESSOR",
         "MediaTypes": [
           "text/plain",
           "application/json",

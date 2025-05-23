@@ -8,4 +8,7 @@ public class Contexto : DbContext
     public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
     public DbSet<USUARIO> Usuarios { get; set; }
+    public DbSet<ALUNO> Alunos { get; set; }
+    public DbSet<PROFESSOR> Professores { get; set; }
+    public DbSet<ADMINISTRADOR> Administradores { get; set; }
 }

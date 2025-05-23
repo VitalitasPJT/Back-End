@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [ApiController]
-[Route("vitalitas/[controller]")]
+[Route("vitalitas/user")]
 public class UserController : ControllerBase
 {
     private readonly Contexto _context;
@@ -52,6 +52,33 @@ public class UserController : ControllerBase
         _context.SaveChanges();
 
         return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+    }
+
+    [HttpPost("aluno")]
+    public ActionResult<ALUNO> PostAluno([FromBody] ALUNO aluno)
+    {
+        _context.Alunos.Add(aluno);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(Get), new { id = aluno.Id_Usuario }, aluno);
+    }
+
+    [HttpPost("professor")]
+    public ActionResult<PROFESSOR> PostProfessor([FromBody] PROFESSOR professor)
+    {
+        _context.Professores.Add(professor);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(Get), new {id = professor.Id_Usuario}, professor);
+    }
+
+    [HttpPost("administrador")]
+    public ActionResult<ADMINISTRADOR> PostAdministrador([FromBody] ADMINISTRADOR administrador)
+    {
+        _context.Administradores.Add(administrador);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(Get), new { id = administrador.Id_Usuario }, administrador);
     }
 
     [HttpPut("{id}")]

@@ -23,10 +23,12 @@ public class UserController : ControllerBase
 
 
     [HttpGet]
-    public ActionResult<IEnumerable<USUARIO>> Get()
+    public ActionResult<IEnumerable<UsuarioC>> Get()
     {
         return _context.Usuarios.ToList();
     }
+
+    /*
 
     [HttpGet("{id}")]
     public ActionResult<USUARIO> Get(int id)
@@ -36,7 +38,7 @@ public class UserController : ControllerBase
             return NotFound();
 
         return user;
-    }
+    }*/
 
     [HttpPost("login")]
     public ActionResult<LoginResponse> Login([FromBody] Login login)
@@ -72,7 +74,7 @@ public class UserController : ControllerBase
 
 
     [HttpPost]
-    public ActionResult<USUARIO> Post(USUARIO user)
+    public ActionResult<UsuarioC> Post(UsuarioC user)
     {
         _context.Usuarios.Add(user);
         _context.SaveChanges();
@@ -81,7 +83,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("aluno")]
-    public ActionResult<ALUNO> PostAluno([FromBody] ALUNO aluno)
+    public ActionResult<Aluno> PostAluno([FromBody] Aluno aluno)
     {
         _context.Alunos.Add(aluno);
         _context.SaveChanges();
@@ -90,7 +92,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("professor")]
-    public ActionResult<PROFESSOR> PostProfessor([FromBody] PROFESSOR professor)
+    public ActionResult<Professor> PostProfessor([FromBody] Professor professor)
     {
         _context.Professores.Add(professor);
         _context.SaveChanges();
@@ -99,7 +101,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("administrador")]
-    public ActionResult<ADMINISTRADOR> PostAdministrador([FromBody] ADMINISTRADOR administrador)
+    public ActionResult<Administrador> PostAdministrador([FromBody] Administrador administrador)
     {
         _context.Administradores.Add(administrador);
         _context.SaveChanges();
@@ -108,11 +110,11 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("professores")]
-    public async Task<ActionResult<List<Professor>>> getProfessores()
+    public async Task<ActionResult<List<ProfessorDados>>> getProfessores()
     {
         var professores = await (
             from u in _context.Usuarios
-            select new Professor
+            select new ProfessorDados
             {
                 Nome = u.Nome,
                 Usuario = u.Usuario,
@@ -122,9 +124,38 @@ public class UserController : ControllerBase
 
         return Ok(professores);
     }
+    
+    [HttpGet("alunos")]
+    public async Task<ActionResult<List<dynamic>>> getAlunos([FromQuery] string prof)
+    {
+        var alunos = await (
+            from u in _context.Usuarios
+            join p in _context.Alunos on u.Id equals p.Id_Usuario
+            where p.Responsavel == prof
+            select new 
+            {
+                Id = u.Id,
+                Nome = u.Nome,
+                Usuario = u.Usuario,
+                Email = u.Email,
+                Telefone = u.Telefone,
+                Tipo = u.Tipo,
+
+                Status =  p.Status,
+                Data_Inscricao = p.Data_Inscricao,
+                Objetivo = p.Objetivo,
+                Cpf = p.Cpf,
+                Data_Nascimento = p.Data_Nascimento,
+                Responsavel = p.Responsavel
+            }
+            ).ToListAsync();
+     
+
+        return Ok(alunos);
+    }
 
     [HttpPut("{id}")]
-    public IActionResult Put(string id, USUARIO user)
+    public IActionResult Put(string id, UsuarioC user)
     {
         if (id != user.Id)
             return BadRequest();

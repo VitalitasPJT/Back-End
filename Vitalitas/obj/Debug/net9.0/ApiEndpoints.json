@@ -35,7 +35,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Vitalitas.Models.USUARIO, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Vitalitas.Models.UsuarioC, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -55,39 +55,13 @@
     "Parameters": [
       {
         "Name": "user",
-        "Type": "Vitalitas.Models.USUARIO",
+        "Type": "Vitalitas.Models.UsuarioC",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.USUARIO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "UserController",
-    "Method": "Get",
-    "RelativePath": "vitalitas/user/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Vitalitas.Models.USUARIO",
+        "Type": "Vitalitas.Models.UsuarioC",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -112,7 +86,7 @@
       },
       {
         "Name": "user",
-        "Type": "Vitalitas.Models.USUARIO",
+        "Type": "Vitalitas.Models.UsuarioC",
         "IsRequired": true
       }
     ],
@@ -144,13 +118,13 @@
     "Parameters": [
       {
         "Name": "administrador",
-        "Type": "Vitalitas.Models.ADMINISTRADOR",
+        "Type": "Vitalitas.Models.Administrador",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.ADMINISTRADOR",
+        "Type": "Vitalitas.Models.Administrador",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -170,13 +144,39 @@
     "Parameters": [
       {
         "Name": "aluno",
-        "Type": "Vitalitas.Models.ALUNO",
+        "Type": "Vitalitas.Models.Aluno",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.ALUNO",
+        "Type": "Vitalitas.Models.Aluno",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "getAlunos",
+    "RelativePath": "vitalitas/user/alunos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prof",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -222,13 +222,13 @@
     "Parameters": [
       {
         "Name": "professor",
-        "Type": "Vitalitas.Models.PROFESSOR",
+        "Type": "Vitalitas.Models.Professor",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.PROFESSOR",
+        "Type": "Vitalitas.Models.Professor",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -248,7 +248,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Professor, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.ProfessorDados, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

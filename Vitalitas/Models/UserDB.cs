@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Vitalitas.Models
 {
     [Table("USUARIO")]
-    public class USUARIO
+    public class UsuarioC
     {
         [Key]
         [Column("ID")]
@@ -27,9 +27,6 @@ namespace Vitalitas.Models
 
         [Required]
         public required string Tipo { get; set; }
-
-        
-        
     }
 
     public class Login
@@ -46,7 +43,8 @@ namespace Vitalitas.Models
         public string Id { get; set; }
     }
 
-    public class Professor
+
+    public class ProfessorDados
     {
         public string Nome { get; set; }
         public string Usuario { get; set; }
@@ -54,7 +52,7 @@ namespace Vitalitas.Models
     }
 
     [Table("ALUNO")]
-    public class ALUNO
+    public class Aluno
     {
         [Required]
         public string Id_Usuario { get; set; }
@@ -79,7 +77,7 @@ namespace Vitalitas.Models
     }
 
     [Table("PROFESSOR")]
-    public class PROFESSOR
+    public class Professor
     {
         [Required]
         public string Id_Usuario { get; set; }
@@ -91,7 +89,7 @@ namespace Vitalitas.Models
     }
 
     [Table("ADMINISTRADOR")]
-    public class ADMINISTRADOR
+    public class Administrador
     {
         [Required]
         public string Id_Usuario { get; set; }

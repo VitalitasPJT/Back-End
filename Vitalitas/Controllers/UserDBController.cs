@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Vitalitas.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using Vitalitas.Models;
 
 [ApiController]
 [Route("vitalitas/user")]
@@ -13,6 +14,13 @@ public class UserController : ControllerBase
     {
         _context = context;
     }
+
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        return Ok(new { message = "Hello World", success = true });
+    }
+
 
     [HttpGet]
     public ActionResult<IEnumerable<USUARIO>> Get()
@@ -31,19 +39,37 @@ public class UserController : ControllerBase
     }
 
     [HttpPost("login")]
-    public ActionResult<bool> Login([FromBody] Login login)
+    public ActionResult<LoginResponse> Login([FromBody] Login login)
     {
-        var usuarip = _context.Usuarios.FirstOrDefault(u  => u.Usuario == login.Usuario && u.Senha == login.Password);
+        var usuario = _context.Usuarios
+            .Where(u => u.Usuario == login.Usuario && u.Senha == login.Password)
+            .Select(u => new { u.Tipo, u.Id})
+            .FirstOrDefault();
 
-        if (usuarip != null)
+        if (usuario != null)
         {
-            return true;
-        } 
+            var response = new LoginResponse
+            {
+                Sucesso = "true",
+                Tipo = usuario.Tipo,
+                Mensagem = "Login efetuado",
+                Id = usuario.Id
+            };
+
+            return Ok(response);
+        }
         else
         {
-            return false;
+            return Unauthorized(new LoginResponse
+            {
+                Sucesso = "false",
+                Tipo = null,
+                Mensagem = "Usuário ou senha inválidos",
+                Id = null,
+            });
         }
     }
+
 
     [HttpPost]
     public ActionResult<USUARIO> Post(USUARIO user)
@@ -79,6 +105,22 @@ public class UserController : ControllerBase
         _context.SaveChanges();
 
         return CreatedAtAction(nameof(Get), new { id = administrador.Id_Usuario }, administrador);
+    }
+
+    [HttpGet("professores")]
+    public async Task<ActionResult<List<Professor>>> getProfessores()
+    {
+        var professores = await (
+            from u in _context.Usuarios
+            select new Professor
+            {
+                Nome = u.Nome,
+                Usuario = u.Usuario,
+                Id = u.Id,
+            }
+            ).ToListAsync();
+
+        return Ok(professores);
     }
 
     [HttpPut("{id}")]

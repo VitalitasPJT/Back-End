@@ -11,7 +11,6 @@ namespace Vitalitas.Models
         public string Id_Ficha { get; set; }
 
         [Required]
-        [Key]
         public string Id_Aluno { get; set; }
         
         [Required]
@@ -30,7 +29,7 @@ namespace Vitalitas.Models
     [Table("TREINO")]
     public class TREINO
     {
-        [Key]
+
         [Required]
         public string Id_Ficha_Treino { get; set; }
 
@@ -38,20 +37,6 @@ namespace Vitalitas.Models
         [Key]
         public string Id_Treino { get; set; }
 
-        [Required]
-        public string Nome { get; set; }
-    }
-
-    [Table("EXERCICIO")]
-    public class EXERCICIO
-    {
-        [Key]
-        [Required]
-        public string Id_Exercicio { get; set; }
-
-        [Required]
-        public string Musculo { get; set; }
-        
         [Required]
         public string Nome { get; set; }
     }
@@ -69,5 +54,11 @@ namespace Vitalitas.Models
         public string Series { get; set; }
         public int Repeticoes { get; set; }
         public string Aparelho { get; set; }
+        
+        [Required]
+        public string Nome { get; set; }
+        
+        [Required]
+        public string Musculo { get; set; }
     }
 }

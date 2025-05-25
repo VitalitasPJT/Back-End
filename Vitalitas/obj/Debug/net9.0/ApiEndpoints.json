@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "FichaController",
+    "Method": "Post",
+    "RelativePath": "vitalitas/fichas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fichaDeTreino",
+        "Type": "Vitalitas.Models.FICHA_DE_TREINO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.FICHA_DE_TREINO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "UserController",
     "Method": "Get",
     "RelativePath": "vitalitas/user",
@@ -176,7 +202,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Boolean",
+        "Type": "Vitalitas.Models.LoginResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -211,5 +237,35 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "getProfessores",
+    "RelativePath": "vitalitas/user/professores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Professor, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "Test",
+    "RelativePath": "vitalitas/user/test",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

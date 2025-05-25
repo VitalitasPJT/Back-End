@@ -27,6 +27,8 @@ namespace Vitalitas.Models
 
         [Required]
         public required string Tipo { get; set; }
+
+        
         
     }
 
@@ -34,6 +36,21 @@ namespace Vitalitas.Models
     {
         public string Usuario { get; set; }
         public string Password { get; set; }
+    }
+
+    public class LoginResponse
+    {
+        public string Sucesso { get; set; }
+        public string Tipo { get; set; }
+        public string Mensagem { get; set; }
+        public string Id { get; set; }
+    }
+
+    public class Professor
+    {
+        public string Nome { get; set; }
+        public string Usuario { get; set; }
+        public string Id { get; set; }
     }
 
     [Table("ALUNO")]
@@ -56,6 +73,9 @@ namespace Vitalitas.Models
 
         [Required]
         public DateTime Data_Nascimento { get; set; }
+        
+        [Required]
+        public string Responsavel { get; set; }
     }
 
     [Table("PROFESSOR")]

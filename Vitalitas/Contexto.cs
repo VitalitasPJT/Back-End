@@ -13,5 +13,4 @@ public class Contexto : DbContext
     public DbSet<ADMINISTRADOR> Administradores { get; set; }
     public DbSet<FICHA_DE_TREINO> FichasDeTreinos { get; set; }
     public DbSet<TREINO> Treinos { get; set; }
-    public DbSet<EXERCICIO> Exercicio { get; set; }
 }

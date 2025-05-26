@@ -24,6 +24,10 @@ namespace Vitalitas.Models
 
         [Required]
         public DateTime Data_Validade { get; set; }
+        [Required]
+        public string Nome { get; set; }
+
+        public string Observacoes { get; set; }
     }
 
     [Table("TREINO")]

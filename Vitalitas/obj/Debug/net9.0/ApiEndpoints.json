@@ -2,7 +2,7 @@
   {
     "ContainingType": "FichaController",
     "Method": "Post",
-    "RelativePath": "vitalitas/fichas",
+    "RelativePath": "vitalitas/fichas/ficha",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -188,21 +188,47 @@
   },
   {
     "ContainingType": "UserController",
-    "Method": "Login",
-    "RelativePath": "vitalitas/user/login",
+    "Method": "LoginAdm",
+    "RelativePath": "vitalitas/user/loginadm",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "login",
-        "Type": "Vitalitas.Models.Login",
+        "Type": "Vitalitas.Models.LoginAdm",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.LoginResponse",
+        "Type": "Vitalitas.Models.LoginResponseAdm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "LoginUser",
+    "RelativePath": "vitalitas/user/loginuser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Vitalitas.Models.LoginUser",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.LoginResponseUser",
         "MediaTypes": [
           "text/plain",
           "application/json",

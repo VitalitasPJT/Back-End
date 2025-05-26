@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Vitalitas.Models
 {
@@ -29,13 +30,20 @@ namespace Vitalitas.Models
         public required string Tipo { get; set; }
     }
 
-    public class Login
+    public class LoginUser
     {
         public string Usuario { get; set; }
         public string Password { get; set; }
     }
 
-    public class LoginResponse
+    public class LoginAdm
+    {
+        public string Usuario { get; set; }
+        public string Password { get; set; }
+        public string Id_Acesso {  get; set; }
+    }
+
+    public class LoginResponseUser
     {
         public string Sucesso { get; set; }
         public string Tipo { get; set; }
@@ -43,6 +51,11 @@ namespace Vitalitas.Models
         public string Id { get; set; }
     }
 
+    public class LoginResponseAdm
+    {
+        public string Sucesso { get; set; }
+        public string Id { get; set; }
+    }
 
     public class ProfessorDados
     {
@@ -100,5 +113,8 @@ namespace Vitalitas.Models
         [Key]
         [Required]
         public long Registro { get; set; }
+
+        [Required]
+        public string Id_Acesso { get; set; }
     }
 }

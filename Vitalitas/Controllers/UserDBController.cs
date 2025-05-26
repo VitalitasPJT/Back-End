@@ -40,17 +40,49 @@ public class UserController : ControllerBase
         return user;
     }*/
 
-    [HttpPost("login")]
-    public ActionResult<LoginResponse> Login([FromBody] Login login)
+    [HttpPost("loginadm")]
+    public ActionResult<LoginResponseAdm> LoginAdm([FromBody] LoginAdm login)
+    {
+        var usuario = (from u in _context.Usuarios
+                       join j in _context.Administradores on login.Id_Acesso equals j.Id_Acesso
+                       where u.Usuario == login.Usuario
+                       && u.Senha == login.Password
+                       select new
+                       {
+                           u.Id
+                       }).FirstOrDefault();
+
+        if (usuario != null)
+        {
+            var response = new LoginResponseAdm
+            {
+                Sucesso = "true",
+                Id = usuario.Id
+            };
+
+            return Ok(response);
+        }
+        else
+        {
+            return Unauthorized(new LoginResponseAdm
+            {
+                Sucesso = "false",
+                Id = null,
+            });
+        }
+    }
+
+    [HttpPost("loginuser")]
+    public ActionResult<LoginResponseUser> LoginUser([FromBody] LoginUser login)
     {
         var usuario = _context.Usuarios
             .Where(u => u.Usuario == login.Usuario && u.Senha == login.Password)
-            .Select(u => new { u.Tipo, u.Id})
+            .Select(u => new { u.Tipo, u.Id })
             .FirstOrDefault();
 
         if (usuario != null)
         {
-            var response = new LoginResponse
+            var response = new LoginResponseUser
             {
                 Sucesso = "true",
                 Tipo = usuario.Tipo,
@@ -62,7 +94,7 @@ public class UserController : ControllerBase
         }
         else
         {
-            return Unauthorized(new LoginResponse
+            return Unauthorized(new LoginResponseUser
             {
                 Sucesso = "false",
                 Tipo = null,

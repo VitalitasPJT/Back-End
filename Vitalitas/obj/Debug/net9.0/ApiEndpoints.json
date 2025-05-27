@@ -1,8 +1,8 @@
 [
   {
     "ContainingType": "FichaController",
-    "Method": "Post",
-    "RelativePath": "vitalitas/fichas/ficha",
+    "Method": "PostFicha",
+    "RelativePath": "vitalitas/fichas",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

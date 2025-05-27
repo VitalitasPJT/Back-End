@@ -12,9 +12,6 @@ namespace Vitalitas.Models
 
         [Required]
         public string Id_Aluno { get; set; }
-        
-        [Required]
-        public string Status {  get; set; }
 
         [Required]
         public string Responsavel { get; set; }

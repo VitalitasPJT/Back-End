@@ -52,6 +52,32 @@
     ]
   },
   {
+    "ContainingType": "FichaController",
+    "Method": "PostExercicio",
+    "RelativePath": "vitalitas/fichas/treino/exercicio",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "treinoExercicio",
+        "Type": "Vitalitas.Models.TreinoExercicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.TreinoExercicio",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "UserController",
     "Method": "Get",
     "RelativePath": "vitalitas/user",

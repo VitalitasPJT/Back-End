@@ -31,4 +31,13 @@ public class FichaController : ControllerBase
 
         return CreatedAtAction(nameof(PostTreino), treino);
     }
+
+    [HttpPost("treino/exercicio")]
+    public ActionResult<TreinoExercicio> PostExercicio([FromBody] TreinoExercicio treinoExercicio)
+    {
+        _context.TreinoExercicios.Add(treinoExercicio);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(PostTreino), treinoExercicio);
+    }
 }

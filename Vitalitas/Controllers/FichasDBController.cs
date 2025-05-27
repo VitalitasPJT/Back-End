@@ -15,11 +15,20 @@ public class FichaController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<FICHA_DE_TREINO> PostFicha([FromBody] FICHA_DE_TREINO fichaDeTreino)
+    public ActionResult<FichaDeTreino> PostFicha([FromBody] FichaDeTreino fichaDeTreino)
     {
         _context.FichasDeTreinos.Add(fichaDeTreino);
         _context.SaveChanges();
 
         return CreatedAtAction(nameof(PostFicha), fichaDeTreino);
+    }
+
+    [HttpPost("treino")]
+    public ActionResult<Treino> PostTreino([FromBody] Treino treino)
+    {
+        _context.Treinos.Add(treino);
+        _context.SaveChanges();
+
+        return CreatedAtAction(nameof(PostTreino), treino);
     }
 }

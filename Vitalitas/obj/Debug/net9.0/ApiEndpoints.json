@@ -9,13 +9,39 @@
     "Parameters": [
       {
         "Name": "fichaDeTreino",
-        "Type": "Vitalitas.Models.FICHA_DE_TREINO",
+        "Type": "Vitalitas.Models.FichaDeTreino",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.FICHA_DE_TREINO",
+        "Type": "Vitalitas.Models.FichaDeTreino",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FichaController",
+    "Method": "PostTreino",
+    "RelativePath": "vitalitas/fichas/treino",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "treino",
+        "Type": "Vitalitas.Models.Treino",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Treino",
         "MediaTypes": [
           "text/plain",
           "application/json",

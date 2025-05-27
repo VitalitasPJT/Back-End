@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Vitalitas.Models
 {
     [Table("FICHA_DE_TREINO")]
-    public class FICHA_DE_TREINO
+    public class FichaDeTreino
     {
         [Key]
         [Required]
@@ -28,7 +28,7 @@ namespace Vitalitas.Models
     }
 
     [Table("TREINO")]
-    public class TREINO
+    public class Treino
     {
 
         [Required]
@@ -43,14 +43,14 @@ namespace Vitalitas.Models
     }
 
     [Table("TREINO_EXERCICIO")]
-    public class TREINO_EXERCICIO
+    public class TreinoExercicio
     {
         [Key]
         [Required]
         public string Id_Treino { get; set; }
 
         [Required]
-        [Key]
+   
         public string Id_Exercicio { get; set; }
         public string Series { get; set; }
         public int Repeticoes { get; set; }

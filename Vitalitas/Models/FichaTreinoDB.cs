@@ -52,8 +52,8 @@ namespace Vitalitas.Models
         [Required]
         public string Id_Exercicio { get; set; }
 
-        public string Series { get; set; }
-        public int Repeticoes { get; set; }
+        public Int32 Series { get; set; }
+        public Int32 Repeticoes { get; set; }
         public string Aparelho { get; set; }
         
         [Required]

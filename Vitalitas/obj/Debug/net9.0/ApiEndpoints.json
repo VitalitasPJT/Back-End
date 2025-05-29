@@ -27,6 +27,32 @@
   },
   {
     "ContainingType": "FichaController",
+    "Method": "GetFicha",
+    "RelativePath": "vitalitas/fichas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aluno",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.FichaDeTreino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FichaController",
     "Method": "PostTreino",
     "RelativePath": "vitalitas/fichas/treino",
     "HttpMethod": "POST",
@@ -53,6 +79,32 @@
   },
   {
     "ContainingType": "FichaController",
+    "Method": "GetTreino",
+    "RelativePath": "vitalitas/fichas/treino",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idFicha",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Treino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FichaController",
     "Method": "PostExercicio",
     "RelativePath": "vitalitas/fichas/treino/exercicio",
     "HttpMethod": "POST",
@@ -68,6 +120,32 @@
     "ReturnTypes": [
       {
         "Type": "Vitalitas.Models.TreinoExercicio",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FichaController",
+    "Method": "GetExercicio",
+    "RelativePath": "vitalitas/fichas/treino/exercicio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTreino",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.TreinoExercicio, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

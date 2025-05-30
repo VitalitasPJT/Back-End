@@ -23,7 +23,7 @@ public class FichaController : ControllerBase
         _context.FichasDeTreinos.Add(fichaDeTreino);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(PostFicha), fichaDeTreino);
+        return Ok(new { mesaage = "Ficha de treinos criada com sucesso", success = true });
     }
 
     [HttpPost("treino")]
@@ -32,7 +32,7 @@ public class FichaController : ControllerBase
         _context.Treinos.Add(treino);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(PostTreino), treino);
+        return Ok(new { mesaage = "Treino criado com sucesso", success = true });
     }
 
     [HttpPost("treino/exercicio")]
@@ -41,7 +41,7 @@ public class FichaController : ControllerBase
         _context.TreinoExercicios.Add(treinoExercicio);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(PostTreino), treinoExercicio);
+        return Ok(new { mesaage = "Exercicio salvo com sucesso", success = true });
     }
 
     [HttpGet]

@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "AgendaController",
+    "Method": "PostAgenda",
+    "RelativePath": "vitalitas/agenda",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "agenda",
+        "Type": "Vitalitas.Models.Agenda",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Agenda",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AgendaController",
+    "Method": "getAgenda",
+    "RelativePath": "vitalitas/agenda",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProf",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Agenda, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FichaController",
     "Method": "PostFicha",
     "RelativePath": "vitalitas/fichas",
@@ -200,6 +252,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "Get",
+    "RelativePath": "vitalitas/user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "UserController",

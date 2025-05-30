@@ -21,24 +21,23 @@ public class UserController : ControllerBase
         return Ok(new { message = "Hello World", success = true });
     }
 
-
+    /*
     [HttpGet]
     public ActionResult<IEnumerable<UsuarioC>> Get()
     {
         return _context.Usuarios.ToList();
-    }
+    }*/
 
-    /*
 
     [HttpGet("{id}")]
-    public ActionResult<USUARIO> Get(int id)
+    public ActionResult<dynamic> Get(string id)
     {
         var user = _context.Usuarios.Find(id);
         if (user == null)
             return NotFound();
 
         return user;
-    }*/
+    }
 
     [HttpPost("loginadm")]
     public ActionResult<LoginResponseAdm> LoginAdm([FromBody] LoginAdm login)
@@ -111,7 +110,7 @@ public class UserController : ControllerBase
         _context.Usuarios.Add(user);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(Get), new { id = user.Id }, user);
+        return CreatedAtAction(nameof(Get), new { mesaage = "Usuario criado com sucesso", success = true, id = user.Id }, user);
     }
 
     [HttpPost("aluno")]
@@ -120,7 +119,7 @@ public class UserController : ControllerBase
         _context.Alunos.Add(aluno);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(Get), new { id = aluno.Id_Usuario }, aluno);
+        return Ok(new { mesaage = "Usuario do tipo ALUNO criado com sucesso", success = true });
     }
 
     [HttpPost("professor")]
@@ -129,7 +128,7 @@ public class UserController : ControllerBase
         _context.Professores.Add(professor);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(Get), new {id = professor.Id_Usuario}, professor);
+        return Ok(new { mesaage = "Usuario do tipo PROFESSOR criado com sucesso", success = true });
     }
 
     [HttpPost("administrador")]
@@ -138,7 +137,7 @@ public class UserController : ControllerBase
         _context.Administradores.Add(administrador);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(Get), new { id = administrador.Id_Usuario }, administrador);
+        return Ok(new { mesaage = "Usuario do tipo ADMINISTRADOR criado com sucesso", success = true });
     }
 
     [HttpGet("professores")]
@@ -185,6 +184,7 @@ public class UserController : ControllerBase
 
         return Ok(alunos);
     }
+    
 
     [HttpPut("{id}")]
     public IActionResult Put(string id, UsuarioC user)

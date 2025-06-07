@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,22 +22,23 @@ public class UserController : ControllerBase
         return Ok(new { message = "Hello World", success = true });
     }
 
-    /*
+
     [HttpGet]
-    public ActionResult<IEnumerable<UsuarioC>> Get()
+    public async Task<ActionResult<Responser<List<UsuarioC>>>> Get()
     {
-        return _context.Usuarios.ToList();
-    }*/
+        var listadeusuarios = await(_context.Usuarios).ToListAsync();
+        return Ok(new Responser<List<UsuarioC>>("Listagem de todos usuarios feito com sucesso", true, listadeusuarios));
+    }
 
 
     [HttpGet("{id}")]
-    public ActionResult<dynamic> Get(string id)
+    public ActionResult<Responser<dynamic>> Get(string id)
     {
         var user = _context.Usuarios.Find(id);
         if (user == null)
-            return NotFound();
+            return NotFound(new Responser<dynamic>("Usuario nao encontrado com esse id", false, null));
 
-        return user;
+        return Ok(new Responser<dynamic>("Usuario com o id encontrado", true, user));
     }
 
     [HttpPost("loginadm")]
@@ -105,46 +107,47 @@ public class UserController : ControllerBase
 
 
     [HttpPost]
-    public ActionResult<UsuarioC> Post(UsuarioC user)
+    public ActionResult<Responser<UsuarioC>> Post(UsuarioC user)
     {
         _context.Usuarios.Add(user);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(Get), new { mesaage = "Usuario criado com sucesso", success = true, id = user.Id }, user);
+        return CreatedAtAction(nameof(Get), new Responser<UsuarioC>("Usuario criado com sucesso", true, user));
     }
 
     [HttpPost("aluno")]
-    public ActionResult<Aluno> PostAluno([FromBody] Aluno aluno)
+    public ActionResult<Responser<Aluno>> PostAluno([FromBody] Aluno aluno)
     {
         _context.Alunos.Add(aluno);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Usuario do tipo ALUNO criado com sucesso", success = true });
+        return Ok(new Responser<Aluno>("Usuario do tipo ALUNO criado com sucesso", true, aluno));
     }
 
     [HttpPost("professor")]
-    public ActionResult<Professor> PostProfessor([FromBody] Professor professor)
+    public ActionResult<Responser<Professor>> PostProfessor([FromBody] Professor professor)
     {
         _context.Professores.Add(professor);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Usuario do tipo PROFESSOR criado com sucesso", success = true });
+        return Ok(new Responser<Professor>("Usuario do tipo PROFESSOR criado com sucesso", true, professor));
     }
 
     [HttpPost("administrador")]
-    public ActionResult<Administrador> PostAdministrador([FromBody] Administrador administrador)
+    public ActionResult<Responser<Administrador>> PostAdministrador([FromBody] Administrador administrador)
     {
         _context.Administradores.Add(administrador);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Usuario do tipo ADMINISTRADOR criado com sucesso", success = true });
+        return Ok(new Responser<Administrador>("Usuario do tipo ADMINISTRADOR criado com sucesso", true, administrador));
     }
 
     [HttpGet("professores")]
-    public async Task<ActionResult<List<ProfessorDados>>> getProfessores()
+    public async Task<ActionResult<Responser<List<ProfessorDados>>>> getProfessores()
     {
         var professores = await (
             from u in _context.Usuarios
+            where u.Tipo == "P"
             select new ProfessorDados
             {
                 Nome = u.Nome,
@@ -153,11 +156,11 @@ public class UserController : ControllerBase
             }
             ).ToListAsync();
 
-        return Ok(professores);
+        return Ok(new Responser<List<ProfessorDados>>("Listagem dos professores feito com sucesso", true, professores));
     }
     
     [HttpGet("alunos")]
-    public async Task<ActionResult<List<dynamic>>> getAlunos([FromQuery] string prof)
+    public async Task<ActionResult<Responser<List<object>>>> getAlunos([FromQuery] string prof)
     {
         var alunos = await (
             from u in _context.Usuarios
@@ -182,7 +185,7 @@ public class UserController : ControllerBase
             ).ToListAsync();
      
 
-        return Ok(alunos);
+        return Ok(new Responser<List<object>>("", true, alunos.Cast<object>().ToList()));
     }
     
 

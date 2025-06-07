@@ -64,6 +64,21 @@ namespace Vitalitas.Models
         public string Id { get; set; }
     }
 
+    public class Responser<T>
+    {
+        public string Mensagem { get; set; }
+        public bool Sucesso { get; set; }
+        public T Data { get; set; }
+
+        public Responser(string mensagem, bool sucesso, T data = default)
+        {
+            Mensagem = mensagem;
+            Sucesso = sucesso;
+            Data = data;
+        }
+    }
+
+
     [Table("ALUNO")]
     public class Aluno
     {

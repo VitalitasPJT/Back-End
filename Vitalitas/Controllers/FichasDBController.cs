@@ -18,34 +18,34 @@ public class FichaController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<FichaDeTreino> PostFicha([FromBody] FichaDeTreino fichaDeTreino)
+    public ActionResult<Responser<FichaDeTreino>> PostFicha([FromBody] FichaDeTreino fichaDeTreino)
     {
         _context.FichasDeTreinos.Add(fichaDeTreino);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Ficha de treinos criada com sucesso", success = true });
+        return Ok(new Responser<FichaDeTreino>("Ficha de treinos criada com sucesso", true, fichaDeTreino));
     }
 
     [HttpPost("treino")]
-    public ActionResult<Treino> PostTreino([FromBody] Treino treino)
+    public ActionResult<Responser<Treino>> PostTreino([FromBody] Treino treino)
     {
         _context.Treinos.Add(treino);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Treino criado com sucesso", success = true });
+        return Ok(new Responser<Treino>( "Treino criado com sucesso", true, treino));
     }
 
     [HttpPost("treino/exercicio")]
-    public ActionResult<TreinoExercicio> PostExercicio([FromBody] TreinoExercicio treinoExercicio)
+    public ActionResult<Responser<TreinoExercicio>> PostExercicio([FromBody] TreinoExercicio treinoExercicio)
     {
         _context.TreinoExercicios.Add(treinoExercicio);
         _context.SaveChanges();
 
-        return Ok(new { mesaage = "Exercicio salvo com sucesso", success = true });
+        return Ok(new Responser<TreinoExercicio>("Exercicio salvo com sucesso", true, treinoExercicio));
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<FichaDeTreino>>> GetFicha([FromQuery] string aluno)
+    public async Task<ActionResult<Responser<List<FichaDeTreino>>>> GetFicha([FromQuery] string aluno)
     {
         var fichas = await (
             from u in _context.FichasDeTreinos
@@ -62,11 +62,11 @@ public class FichaController : ControllerBase
 
             }).ToListAsync();
 
-        return Ok(fichas);
+        return Ok(new Responser<List<FichaDeTreino>>( "Listagem feita com sucesso", true, fichas));
     }
 
     [HttpGet("treino")]
-    public async Task<ActionResult<List<Treino>>> GetTreino([FromQuery] string idFicha)
+    public async Task<ActionResult<Responser<List<Treino>>>> GetTreino([FromQuery] string idFicha)
     {
         var treino = await (
             from u in _context.Treinos
@@ -78,11 +78,11 @@ public class FichaController : ControllerBase
                 Nome = u.Nome
             }).ToListAsync();
 
-        return Ok(treino);
+        return Ok(new Responser<List<Treino>>("Listagem feita com sucesso", true, treino));
     }
 
     [HttpGet("treino/exercicio")]
-    public async Task<ActionResult<List<TreinoExercicio>>> GetExercicio([FromQuery] string idTreino)
+    public async Task<ActionResult<Responser<List<TreinoExercicio>>>> GetExercicio([FromQuery] string idTreino)
     {
         var exercicio = await (
             from u in _context.TreinoExercicios
@@ -99,6 +99,6 @@ public class FichaController : ControllerBase
 
             }).ToListAsync();
 
-        return Ok(exercicio);
+        return Ok(new Responser<List<TreinoExercicio>>("Listagem feita com sucesso", true, exercicio));
     }
 }

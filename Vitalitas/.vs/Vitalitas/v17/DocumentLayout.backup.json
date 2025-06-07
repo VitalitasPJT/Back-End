@@ -7,20 +7,12 @@
       "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:controllers\\userdbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\controllers\\agendadbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:controllers\\agendadbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\models\\agendadb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:models\\agendadb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\models\\userdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:models\\userdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\controllers\\fichasdbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:controllers\\fichasdbcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|c:\\users\\sande\\devoper\\code - faculdade\\5 semestre\\projeto\\back_end_devoper\\vitalitas\\models\\fichatreinodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A27745FF-04B8-438A-9DE0-7E3A65B66425}|Vitalitas.csproj|solutionrelative:models\\fichatreinodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,28 +21,22 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 226,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 322,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AgendaDBController.cs",
-              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\AgendaDBController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AgendaDBController.cs",
-              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\AgendaDBController.cs",
-              "RelativeToolTip": "Controllers\\AgendaDBController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBgAAABGAAAAAAAAAA==",
+              "Title": "UserDB.cs",
+              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
+              "RelativeDocumentMoniker": "Models\\UserDB.cs",
+              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\UserDB.cs",
+              "RelativeToolTip": "Models\\UserDB.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAIcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:05:50.915Z",
+              "WhenOpened": "2025-05-31T20:25:44.851Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 226,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -59,49 +45,22 @@
               "RelativeDocumentMoniker": "Controllers\\UserDBController.cs",
               "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\UserDBController.cs*",
               "RelativeToolTip": "Controllers\\UserDBController.cs*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvx0AAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:11:54.966Z",
+              "WhenOpened": "2025-05-31T20:13:25.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AgendaDB.cs",
-              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\AgendaDB.cs",
-              "RelativeDocumentMoniker": "Models\\AgendaDB.cs",
-              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\AgendaDB.cs",
-              "RelativeToolTip": "Models\\AgendaDB.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:23:18.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "FichasDBController.cs",
               "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\FichasDBController.cs",
               "RelativeDocumentMoniker": "Controllers\\FichasDBController.cs",
               "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Controllers\\FichasDBController.cs",
               "RelativeToolTip": "Controllers\\FichasDBController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAswAkAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwGUAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T11:32:49.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FichaTreinoDB.cs",
-              "DocumentMoniker": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\FichaTreinoDB.cs",
-              "RelativeDocumentMoniker": "Models\\FichaTreinoDB.cs",
-              "ToolTip": "C:\\Users\\sande\\DevOper\\Code - Faculdade\\5 Semestre\\Projeto\\back_end_devoper\\Vitalitas\\Models\\FichaTreinoDB.cs",
-              "RelativeToolTip": "Models\\FichaTreinoDB.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA4wBYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T16:36:24.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T19:50:19.102Z"
             }
           ]
         }

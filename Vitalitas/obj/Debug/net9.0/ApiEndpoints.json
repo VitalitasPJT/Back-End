@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.Agenda",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Agenda, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -27,7 +27,7 @@
   },
   {
     "ContainingType": "AgendaController",
-    "Method": "getAgenda",
+    "Method": "GetAgenda",
     "RelativePath": "vitalitas/agenda",
     "HttpMethod": "GET",
     "IsController": true,
@@ -41,7 +41,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Agenda, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.Agenda, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -67,7 +67,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.FichaDeTreino",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.FichaDeTreino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -93,7 +93,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.FichaDeTreino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.FichaDeTreino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -119,7 +119,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.Treino",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Treino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -145,7 +145,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.Treino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.Treino, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -171,7 +171,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.TreinoExercicio",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.TreinoExercicio, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -197,7 +197,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.TreinoExercicio, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.TreinoExercicio, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -217,7 +217,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Vitalitas.Models.UsuarioC, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.UsuarioC, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -243,7 +243,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.UsuarioC",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.UsuarioC, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -267,7 +267,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "UserController",
@@ -322,7 +332,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.Administrador",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Administrador, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -348,7 +358,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.Aluno",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Aluno, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -374,7 +384,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -452,7 +462,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Vitalitas.Models.Professor",
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Professor, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -472,7 +482,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Vitalitas.Models.ProfessorDados, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Collections.Generic.List\u00601[[Vitalitas.Models.ProfessorDados, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

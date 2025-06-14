@@ -224,3 +224,5 @@ C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vita
 C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vitalitas\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vitalitas\obj\Debug\net9.0\Vitalitas.genruntimeconfig.cache
 C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vitalitas\obj\Debug\net9.0\ref\Vitalitas.dll
+C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vitalitas\bin\Debug\net9.0\Npgsql.dll
+C:\Users\sande\DevOper\Code - Faculdade\5 Semestre\Projeto\back_end_devoper\Vitalitas\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll

@@ -52,6 +52,32 @@
     ]
   },
   {
+    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
+    "Method": "PostAvaliacao",
+    "RelativePath": "vitalitas/avaliacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "avaliacao",
+        "Type": "Vitalitas.Models.Avaliacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Avaliacao, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FichaController",
     "Method": "PostFicha",
     "RelativePath": "vitalitas/fichas",

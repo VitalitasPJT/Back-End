@@ -46,7 +46,7 @@ namespace Vitalitas.Models
         public float Perna_E { get; set; }
 
         [Required]
-        public float Perna_D { get; set; }
+        public float Perna_D { get; set; } 
 
         [Required]
         public float Coxa_E { get; set; }

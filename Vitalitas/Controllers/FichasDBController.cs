@@ -20,6 +20,7 @@ public class FichaController : ControllerBase
     [HttpPost]
     public ActionResult<Responser<FichaDeTreino>> PostFicha([FromBody] FichaDeTreino fichaDeTreino)
     {
+
         _context.FichasDeTreinos.Add(fichaDeTreino);
         _context.SaveChanges();
 
@@ -29,6 +30,7 @@ public class FichaController : ControllerBase
     [HttpPost("treino")]
     public ActionResult<Responser<Treino>> PostTreino([FromBody] Treino treino)
     {
+        //gera id aqui xxxxx)
         _context.Treinos.Add(treino);
         _context.SaveChanges();
 
@@ -38,6 +40,7 @@ public class FichaController : ControllerBase
     [HttpPost("treino/exercicio")]
     public ActionResult<Responser<TreinoExercicio>> PostExercicio([FromBody] TreinoExercicio treinoExercicio)
     {
+        //gera id aqui (pppp)
         _context.TreinoExercicios.Add(treinoExercicio);
         _context.SaveChanges();
 

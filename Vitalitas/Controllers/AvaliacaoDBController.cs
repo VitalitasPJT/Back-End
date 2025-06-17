@@ -23,7 +23,7 @@ namespace Vitalitas.Controllers
             return Ok(new Responser<Avaliacao>("Avaliação inserida com sucesso", true, avaliacao));
         }
 
-        [HttpPost("/perimetro")]
+        [HttpPost("perimetro")]
         public ActionResult<Responser<Perimetro>> PostPerimetro([FromBody] Perimetro perimetro)
         {
             _context.Perimetros.Add(perimetro);
@@ -32,7 +32,7 @@ namespace Vitalitas.Controllers
             return Ok(new Responser<Perimetro>("Perimetro inserido com sucesso", true, perimetro));
         }
 
-        [HttpPost("/cutaneas")]
+        [HttpPost("cutaneas")]
         public ActionResult<Responser<Cutaneas>> PostCutaneas([FromBody] Cutaneas cutaneas)
         {
             _context.Cutaneas.Add(cutaneas);

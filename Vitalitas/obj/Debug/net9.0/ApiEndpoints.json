@@ -1,57 +1,5 @@
 [
   {
-    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
-    "Method": "PostCutaneas",
-    "RelativePath": "cutaneas",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "cutaneas",
-        "Type": "Vitalitas.Models.Cutaneas",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Cutaneas, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
-    "Method": "PostPerimetro",
-    "RelativePath": "perimetro",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "perimetro",
-        "Type": "Vitalitas.Models.Perimetro",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Perimetro, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "AgendaController",
     "Method": "PostAgenda",
     "RelativePath": "vitalitas/agenda",
@@ -120,6 +68,58 @@
     "ReturnTypes": [
       {
         "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Avaliacao, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
+    "Method": "PostCutaneas",
+    "RelativePath": "vitalitas/avaliacao/cutaneas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cutaneas",
+        "Type": "Vitalitas.Models.Cutaneas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Cutaneas, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
+    "Method": "PostPerimetro",
+    "RelativePath": "vitalitas/avaliacao/perimetro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "perimetro",
+        "Type": "Vitalitas.Models.Perimetro",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Responser\u00601[[Vitalitas.Models.Perimetro, Vitalitas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

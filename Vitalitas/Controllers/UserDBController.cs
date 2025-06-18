@@ -41,6 +41,25 @@ public class UserController : ControllerBase
         return Ok(new Responser<dynamic>("Usuario com o id encontrado", true, user));
     }
 
+    [HttpGet("sexo")]
+    public ActionResult<Responser<dynamic>> GetSexo([FromQuery] string id)
+    {
+        var user = (from u in _context.Usuarios
+                    join j in _context.Alunos on u.Id equals j.Id_Usuario
+                    where u.Id == id
+                    select new
+                    {
+                        u.Usuario,
+                        u.Nome,
+                        j.Sexo
+                    }).FirstOrDefault();
+
+        if (user == null)
+            return NotFound(new Responser<dynamic>("Usuario nao encontrado com esse id", false, null));
+
+        return Ok(new Responser<dynamic>("Sexo do aluno encontrado", true, user.Sexo));
+    }
+
     [HttpPost("loginadm")]
     public ActionResult<LoginResponseAdm> LoginAdm([FromBody] LoginAdm login)
     {
@@ -187,6 +206,8 @@ public class UserController : ControllerBase
 
         return Ok(new Responser<List<object>>("", true, alunos.Cast<object>().ToList()));
     }
+
+   
     
 
     [HttpPut("{id}")]

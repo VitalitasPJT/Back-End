@@ -102,6 +102,9 @@ namespace Vitalitas.Models
         
         [Required]
         public string Responsavel { get; set; }
+
+        [Required]
+        public string Sexo { get; set; }
     }
 
     [Table("PROFESSOR")]

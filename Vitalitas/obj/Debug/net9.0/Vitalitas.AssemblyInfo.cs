@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vitalitas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fbb9b064eb79c4ea13397251c8d1a092a2e0ca7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f60e81b4e7b91c0e65e6c37f197dab3fdeaf2534")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vitalitas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vitalitas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

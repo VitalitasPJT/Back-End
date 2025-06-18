@@ -35,7 +35,7 @@ namespace Vitalitas.Controllers
         [HttpPost("cutaneas")]
         public ActionResult<Responser<Cutaneas>> PostCutaneas([FromBody] Cutaneas cutaneas)
         {
-            _context.Cutaneas.Add(cutaneas);
+            _context.Cutaneass.Add(cutaneas);
             _context.SaveChanges();
 
             return Ok(new Responser<Cutaneas>("Perimetro inserido com sucesso", true, cutaneas));

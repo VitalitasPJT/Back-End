@@ -17,5 +17,5 @@ public class Contexto : DbContext
     public DbSet<Agenda> Agendas { get; set; }
     public DbSet<Avaliacao> Avaliacoes { get; set; }
     public DbSet<Perimetro> Perimetros { get; set; }
-    public DbSet<Cutaneas> Cutaneas { get; set; }
+    public DbSet<Cutaneas> Cutaneass { get; set; }
 }

@@ -105,7 +105,7 @@ namespace Vitalitas.Models
         public float Se { get; set; }
 
         [Required]
-        public float Panturrilha { get; set; }
+        public float Paturrilha { get; set; }
 
         [Required]
         public float Umero { get; set; }

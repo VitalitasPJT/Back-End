@@ -182,5 +182,29 @@ namespace Vitalitas.Controllers
 
             return Ok(resultados);
         }
+
+        [HttpGet("ultimo")]
+        public async Task<ActionResult<Responser<List<object>>>> GetAvaliacaoRecente([FromQuery] string aluno)
+        {
+            var resultados = await (
+                from u in _context.Resultado
+                join a in _context.Avaliacoes on u.Id_Avaliacao equals a.Id_Avaliacao
+                where a.Id_Aluno == aluno
+                orderby a.Data descending
+                select new
+                {
+                    Id_Avaliacao = u.Id_Avaliacao,
+                    Imc = u.Imc,
+                    Soma_Das_Dobras = u.Soma_Das_Dobras,
+                    Densidade_Corporal = u.Densidade_Corporal,
+                    Percentual_De_Gordura = u.Percentual_De_Gordura,
+                    Massa_Gorda = u.Massa_Gorda,
+                    Percentual_De_Massa_Magra = u.Percentual_De_Massa_Magra,
+                    Massa_Magra = u.Massa_Magra
+                }
+                ).FirstOrDefaultAsync();
+
+            return Ok(resultados);
+        }
     }
 }

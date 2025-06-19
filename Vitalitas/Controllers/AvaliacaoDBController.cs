@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using Vitalitas.Calculations;
 using Vitalitas.Models;
-using Vitalitas.Utils;
 
 namespace Vitalitas.Controllers
 {
@@ -10,7 +10,8 @@ namespace Vitalitas.Controllers
     public class AvaliacaoController : ControllerBase
     {
         private readonly Contexto _context;
-        private readonly Calculos _calculos;
+        private readonly CalculosFeminino _calculosFeminino;
+        private readonly CalculosMasculino _calculosMasculino;
 
         public AvaliacaoController(Contexto context)
         {
@@ -45,10 +46,10 @@ namespace Vitalitas.Controllers
         }
 
         [HttpPost("calcular")]
-        public ActionResult<Responser<dynamic>> PostCalcular([FromQuery] string id_avaliacao)
+        public ActionResult<Responser<dynamic>> PostCalcular([FromBody] BodyCalculo body)
         {
             var avaliacao = (from a in _context.Avaliacoes
-                             where a.Id_Avaliacao == id_avaliacao
+                             where a.Id_Avaliacao == body.Id_Avaliacao
                              select new
                              {
                                  a.Peso,
@@ -57,7 +58,7 @@ namespace Vitalitas.Controllers
                              }).FirstOrDefault();
 
             var perimetro = (from u in _context.Perimetros
-                             where u.Id_Avaliacao == id_avaliacao
+                             where u.Id_Avaliacao == body.Id_Avaliacao
                              select new
                              {
                                  u.Perna_E,
@@ -74,7 +75,7 @@ namespace Vitalitas.Controllers
                              }).FirstOrDefault();
 
             var cutanea = (from j in _context.Cutaneass
-                           where j.Id_Avaliacao == id_avaliacao
+                           where j.Id_Avaliacao == body.Id_Avaliacao
                            select new
                            {
                                j.Tr,
@@ -89,10 +90,39 @@ namespace Vitalitas.Controllers
                                j.Femur
                            }).FirstOrDefault();
 
-            float imc = _calculos.IMC(avaliacao.Altura, avaliacao.Peso);
 
-
-            return Ok(id_avaliacao);
+           switch (body.Sexo)
+            {
+                case "M":
+                    string id = body.Id_Avaliacao;
+                    CalculosMasculino calculo = new CalculosMasculino(
+                        avaliacao.Altura,
+                        avaliacao.Peso,
+                        cutanea.Tr,
+                        cutanea.Cx,
+                        cutanea.Si,
+                        cutanea.Ab,
+                        cutanea.Ax,
+                        cutanea.Pt,
+                        cutanea.Se,
+                        avaliacao.Idade
+                        );
+                    Resultado result = new Resultado(
+                        id, 
+                        calculo.Imc, 
+                        calculo.Soma_Das_Dobras, 
+                        calculo.Densidade_Corporal, 
+                        calculo.Percentual_De_Gordura, 
+                        calculo.Massa_Gorda, 
+                        calculo.Percentual_De_Massa_Magra,
+                        calculo.Massa_Magra
+                        );
+                    _context.Resultado.Add(result);
+                    break;
+                case "F":
+                    break;
+            }
+            return Ok(new Responser<dynamic>("", true, null));
         }
     }
 }

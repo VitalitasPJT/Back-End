@@ -79,6 +79,32 @@
   },
   {
     "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
+    "Method": "PostCalcular",
+    "RelativePath": "vitalitas/avaliacao/calcular",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "Vitalitas.Models.BodyCalculo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Vitalitas.Models.Responser\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Vitalitas.Controllers.AvaliacaoController",
     "Method": "PostCutaneas",
     "RelativePath": "vitalitas/avaliacao/cutaneas",
     "HttpMethod": "POST",

@@ -113,4 +113,60 @@ namespace Vitalitas.Models
         [Required]
         public float Femur { get; set; }
     }
+
+    [Table("RESULTADO")]
+    public class Resultado
+    {
+        [Key]
+        [Required]
+        public string Id_Avaliacao { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Imc { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Soma_Das_Dobras { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Densidade_Corporal { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Percentual_De_Gordura { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Massa_Gorda { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Percentual_De_Massa_Magra { get; set; }
+
+        [Required]
+        [Column(TypeName = "real")]
+        public float Massa_Magra { get; set; }
+
+        public Resultado() { }
+
+        public Resultado(string id, float imc, float somadobras, float densidade, float pgordura, float massagorda, float pmagra, float massamagra)
+        {
+            Id_Avaliacao = id;
+            Imc = imc;
+            Soma_Das_Dobras = somadobras;
+            Densidade_Corporal = densidade;
+            Percentual_De_Gordura = pgordura;
+            Massa_Gorda = massagorda;
+            Percentual_De_Massa_Magra = pmagra;
+            Massa_Magra = massamagra;
+        }
+    }
+
+    public class BodyCalculo
+    {
+        public string Sexo { get; set; }
+        public string Id_Avaliacao { get; set; }
+    }
 }

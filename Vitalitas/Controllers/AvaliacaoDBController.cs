@@ -46,10 +46,10 @@ namespace Vitalitas.Controllers
         }
 
         [HttpPost("calcular")]
-        public ActionResult<Responser<dynamic>> PostCalcular([FromBody] BodyCalculo body)
+        public ActionResult<Responser<dynamic>> PostCalcular([FromBody] Calcular calcular)
         {
             var avaliacao = (from a in _context.Avaliacoes
-                             where a.Id_Avaliacao == body.Id_Avaliacao
+                             where a.Id_Avaliacao == calcular.Id_Avaliacao
                              select new
                              {
                                  a.Peso,
@@ -58,7 +58,7 @@ namespace Vitalitas.Controllers
                              }).FirstOrDefault();
 
             var perimetro = (from u in _context.Perimetros
-                             where u.Id_Avaliacao == body.Id_Avaliacao
+                             where u.Id_Avaliacao == calcular.Id_Avaliacao
                              select new
                              {
                                  u.Perna_E,
@@ -75,7 +75,7 @@ namespace Vitalitas.Controllers
                              }).FirstOrDefault();
 
             var cutanea = (from j in _context.Cutaneass
-                           where j.Id_Avaliacao == body.Id_Avaliacao
+                           where j.Id_Avaliacao == calcular.Id_Avaliacao
                            select new
                            {
                                j.Tr,
@@ -91,11 +91,15 @@ namespace Vitalitas.Controllers
                            }).FirstOrDefault();
 
 
-           switch (body.Sexo)
+           switch (calcular.Sexo)
             {
                 case "M":
-                    string id = body.Id_Avaliacao;
-                    CalculosMasculino calculo = new CalculosMasculino(
+                    if (avaliacao == null)
+                        return BadRequest(new Responser<string>("Avaliação não encontrada.", false, null));
+
+                    if (cutanea == null)
+                        return BadRequest(new Responser<string>("Dobras cutâneas não encontradas.", false, null));
+                    CalculosMasculino calculom = new CalculosMasculino(
                         avaliacao.Altura,
                         avaliacao.Peso,
                         cutanea.Tr,
@@ -107,20 +111,50 @@ namespace Vitalitas.Controllers
                         cutanea.Se,
                         avaliacao.Idade
                         );
-                    Resultado result = new Resultado(
-                        id, 
-                        calculo.Imc, 
-                        calculo.Soma_Das_Dobras, 
-                        calculo.Densidade_Corporal, 
-                        calculo.Percentual_De_Gordura, 
-                        calculo.Massa_Gorda, 
-                        calculo.Percentual_De_Massa_Magra,
-                        calculo.Massa_Magra
+                    Resultado resultm = new Resultado(
+                        calcular.Id_Avaliacao, 
+                        calculom.Imc, 
+                        calculom.Soma_Das_Dobras, 
+                        calculom.Densidade_Corporal, 
+                        calculom.Percentual_De_Gordura, 
+                        calculom.Massa_Gorda, 
+                        calculom.Percentual_De_Massa_Magra,
+                        calculom.Massa_Magra
                         );
-                    _context.Resultado.Add(result);
-                    break;
+                    _context.Resultado.Add(resultm);
+                    _context.SaveChanges();
+                    return Ok(new Responser<dynamic>("Inserido os calulos masculino com sucesso", true, resultm));
                 case "F":
-                    break;
+                    if (avaliacao == null)
+                        return BadRequest(new Responser<string>("Avaliação não encontrada.", false, null));
+
+                    if (cutanea == null)
+                        return BadRequest(new Responser<string>("Dobras cutâneas não encontradas.", false, null));
+                    CalculosFeminino calculof = new CalculosFeminino(
+                        avaliacao.Altura,
+                        avaliacao.Peso,
+                        cutanea.Tr,
+                        cutanea.Cx,
+                        cutanea.Si,
+                        cutanea.Ab,
+                        cutanea.Ax,
+                        cutanea.Pt,
+                        cutanea.Se,
+                        avaliacao.Idade
+                        );
+                    Resultado resultf = new Resultado(
+                        calcular.Id_Avaliacao,
+                        calculof.Imc,
+                        calculof.Soma_Das_Dobras,
+                        calculof.Densidade_Corporal,
+                        calculof.Percentual_De_Gordura,
+                        calculof.Massa_Gorda,
+                        calculof.Percentual_De_Massa_Magra,
+                        calculof.Massa_Magra
+                        );
+                    _context.Resultado.Add(resultf);
+                    _context.SaveChanges();
+                    return Ok(new Responser<dynamic>("Inserido os calulos femininos com sucesso", true, resultf));
             }
             return Ok(new Responser<dynamic>("", true, null));
         }

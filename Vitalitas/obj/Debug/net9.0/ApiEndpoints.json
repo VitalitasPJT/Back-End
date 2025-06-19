@@ -86,8 +86,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "body",
-        "Type": "Vitalitas.Models.BodyCalculo",
+        "Name": "calcular",
+        "Type": "Vitalitas.Models.Calcular",
         "IsRequired": true
       }
     ],

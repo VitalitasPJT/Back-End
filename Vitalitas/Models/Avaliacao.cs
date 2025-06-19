@@ -23,16 +23,16 @@ namespace Vitalitas.Models
         public TimeOnly Hora { get; set; }
 
         [Required]
-        public float Peso { get; set; }
+        public double Peso { get; set; }
 
         [Required]
         public int Idade { get; set; }
 
         [Required]
-        public float Altura { get; set; }
+        public double Altura { get; set; }
 
         [Required]
-        public float IMC { get; set; }
+        public double IMC { get; set; }
     }
 
     [Table("PERIMETRO_AVALIACAO")]
@@ -43,37 +43,37 @@ namespace Vitalitas.Models
         public string Id_Avaliacao { get; set; }
 
         [Required]
-        public float Perna_E { get; set; }
+        public double Perna_E { get; set; }
 
         [Required]
-        public float Perna_D { get; set; } 
+        public double Perna_D { get; set; } 
 
         [Required]
-        public float Coxa_E { get; set; }
+        public double Coxa_E { get; set; }
 
         [Required]
-        public float Coxa_D { get; set; }
+        public double Coxa_D { get; set; }
 
         [Required]
-        public float Braco_E { get; set; }
+        public double Braco_E { get; set; }
 
         [Required]
-        public float Braco_D { get; set; }
+        public double Braco_D { get; set; }
 
         [Required]
-        public float Quadril { get; set; }
+        public double Quadril { get; set; }
 
         [Required]
-        public float Abdomen { get; set; }
+        public double Abdomen { get; set; }
 
         [Required]
-        public float Deltoide { get; set; }
+        public double Deltoide { get; set; }
 
         [Required]
-        public float Cintura { get; set; }
+        public double Cintura { get; set; }
 
         [Required]
-        public float Torax { get; set; }
+        public double Torax { get; set; }
     }
 
     [Table("CUTANEAS_AVALIACAO")]
@@ -84,34 +84,34 @@ namespace Vitalitas.Models
         public string Id_Avaliacao { get; set; }
 
         [Required]
-        public float Tr { get; set; }
+        public double Tr { get; set; }
 
         [Required]
-        public float Cx { get; set; }
+        public double Cx { get; set; }
 
         [Required]
-        public float Si { get; set; }
+        public double Si { get; set; }
 
         [Required]
-        public float Ab { get; set; }
+        public double Ab { get; set; }
 
         [Required]
-        public float Ax { get; set; }
+        public double Ax { get; set; }
 
         [Required]
-        public float Pt { get; set; }
+        public double Pt { get; set; }
 
         [Required]
-        public float Se { get; set; }
+        public double Se { get; set; }
 
         [Required]
-        public float Paturrilha { get; set; }
+        public double Paturrilha { get; set; }
 
         [Required]
-        public float Umero { get; set; }
+        public double Umero { get; set; }
 
         [Required]
-        public float Femur { get; set; }
+        public double Femur { get; set; }
     }
 
     [Table("RESULTADO")]
@@ -122,36 +122,29 @@ namespace Vitalitas.Models
         public string Id_Avaliacao { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Imc { get; set; }
+        public double Imc { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Soma_Das_Dobras { get; set; }
+        public double Soma_Das_Dobras { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Densidade_Corporal { get; set; }
+        public double Densidade_Corporal { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Percentual_De_Gordura { get; set; }
+        public double Percentual_De_Gordura { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Massa_Gorda { get; set; }
+        public double Massa_Gorda { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Percentual_De_Massa_Magra { get; set; }
+        public double Percentual_De_Massa_Magra { get; set; }
 
         [Required]
-        [Column(TypeName = "real")]
-        public float Massa_Magra { get; set; }
+        public double Massa_Magra { get; set; }
 
         public Resultado() { }
 
-        public Resultado(string id, float imc, float somadobras, float densidade, float pgordura, float massagorda, float pmagra, float massamagra)
+        public Resultado(string id, double imc, double somadobras, double densidade, double pgordura, double massagorda, double pmagra, double massamagra)
         {
             Id_Avaliacao = id;
             Imc = imc;
@@ -164,7 +157,7 @@ namespace Vitalitas.Models
         }
     }
 
-    public class BodyCalculo
+    public class Calcular
     {
         public string Sexo { get; set; }
         public string Id_Avaliacao { get; set; }

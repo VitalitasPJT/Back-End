@@ -2,39 +2,45 @@
 {
     public class CalculosFeminino
     {
-        public string Id_Avaliacao;
-        public float Imc;
-        public float Soma_Das_Dobras;
-        public float Densidade_Corporal;
-        public float Percentual_De_Gordura;
-        public float Massa_Gorda;
-        public float Percentual_De_Massa_Magra;
-        public float Massa_Magra;
+        public double Imc;
+        public double Soma_Das_Dobras;
+        public double Densidade_Corporal;
+        public double Percentual_De_Gordura;
+        public double Massa_Gorda;
+        public double Percentual_De_Massa_Magra;
+        public double Massa_Magra;
 
-        public CalculosFeminino(string id_avaliacao, float imc, float soma_das_dobras, float densidade_corporal,
-                                float percentual_de_gordura, float massa_gorda, float percentual_de_massa_magra, float massa_magra)
+        public CalculosFeminino(double altura, double peso,
+
+                        double tr, double cx, double si, double ab, double ax,
+                        double pt, double se,
+
+                        int idade)
         {
-            Id_Avaliacao = id_avaliacao;
-            Imc = imc;
-            Soma_Das_Dobras = soma_das_dobras;
-            Densidade_Corporal = densidade_corporal;
-            Percentual_De_Gordura = percentual_de_gordura;
-            Massa_Gorda = massa_gorda;
-            Percentual_De_Massa_Magra = percentual_de_massa_magra;
-            Massa_Magra = massa_magra;
+            Imc = IMC(altura, peso);
+            double sete = Somadobras(tr, se, si, ab, cx, pt, ax);
+            Soma_Das_Dobras = sete;
+            double densidade = DensidadeCorporal(sete, idade);
+            Densidade_Corporal = densidade;
+            double pgordura = PercentualGordura(densidade);
+            Percentual_De_Gordura = pgordura;
+            Massa_Gorda = MassaGorda(peso, pgordura);
+            double pmagro = PercentualMaassaMagra(pgordura);
+            Percentual_De_Massa_Magra = pmagro;
+            Massa_Magra = MassaMagra(peso, pmagro);
         }
-        public double IMC(float altura, float peso)
+        public double IMC(double altura, double peso)
         {
             return (peso / (altura * altura));
         }
 
-        public double Somadobras(float triceps, float subescapular, float suprailíaca, float abdominal,
-                                float coxa, float peitoral, float axilar, float media)
+        public double Somadobras(double triceps, double subescapular, double suprailíaca, double abdominal,
+                                double coxa, double peitoral, double axilar)
         {
-            return (triceps + subescapular + suprailíaca + abdominal + coxa + peitoral + axilar + media);
+            return (triceps + subescapular + suprailíaca + abdominal + coxa + peitoral + axilar);
         }
 
-        public double DensidadeCorporal(float setedobras, int idade)
+        public double DensidadeCorporal(double setedobras, int idade)
         {
             return (1.097 - ((0.00046971 * setedobras) + (0.00000056 * (setedobras * setedobras)) - (0.00012828 * idade)));
         }
@@ -44,7 +50,7 @@
             return ((495 / densidade) - 450);
         }
 
-        public double MassaGorda(float peso, double pgordo)
+        public double MassaGorda(double peso, double pgordo)
         {
             return (peso * (pgordo / 100));
         }
@@ -54,7 +60,7 @@
             return (100 - pgordo);
         }
 
-        public double MassaMagra(float peso, double pmagro)
+        public double MassaMagra(double peso, double pmagro)
         {
             return (peso * (pmagro / 100));
         }

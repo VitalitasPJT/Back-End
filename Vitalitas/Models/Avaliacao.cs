@@ -30,9 +30,6 @@ namespace Vitalitas.Models
 
         [Required]
         public double Altura { get; set; }
-
-        [Required]
-        public double IMC { get; set; }
     }
 
     [Table("PERIMETRO_AVALIACAO")]

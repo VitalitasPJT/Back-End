@@ -156,12 +156,14 @@ namespace Vitalitas.Controllers
                     _context.Resultado.Add(resultf);
                     _context.SaveChanges();
                     return Ok(new Responser<dynamic>("Inserido os calulos femininos com sucesso", true, resultf));
+                case "":
+                    return BadRequest("sexo vazio");
             }
             return Ok(new Responser<dynamic>("", true, null));
         }
 
         [HttpGet]
-        public async Task<ActionResult<Responser<List<object>>>> GetAvaliacoes([FromQuery] string aluno)
+        public async Task<ActionResult<Responser<List<dynamic>>>> GetAvaliacoes([FromQuery] string aluno)
         {
             var resultados = await (
                 from u in _context.Resultado
@@ -180,11 +182,11 @@ namespace Vitalitas.Controllers
                 }
                 ).ToListAsync();
 
-            return Ok(resultados);
+            return Ok(new Responser<dynamic>("", true, resultados));
         }
 
         [HttpGet("ultimo")]
-        public async Task<ActionResult<Responser<List<object>>>> GetAvaliacaoRecente([FromQuery] string aluno)
+        public async Task<ActionResult<Responser<List<dynamic>>>> GetAvaliacaoRecente([FromQuery] string aluno)
         {
             var resultados = await (
                 from u in _context.Resultado
@@ -204,7 +206,7 @@ namespace Vitalitas.Controllers
                 }
                 ).FirstOrDefaultAsync();
 
-            return Ok(resultados);
+            return Ok(new Responser<dynamic>("", true, resultados));
         }
     }
 }
